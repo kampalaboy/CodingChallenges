@@ -1,14 +1,14 @@
 def countItem(arr):
-    hashi = []
+    hashi = {}
     
     for i in arr :
         name = i.get('Name')
         age = i.get('Age')
 
-        if i in hashi:
-            hashi[i] += name
+        if name and age in hashi:
+            hashi[age].append(name)
         else:
-            hashi[i] = 1
+            hashi[age] = [name]
     return hashi
 
 arr =[{'Name':'K', 'Age':10},
